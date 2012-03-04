@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/res">
+        <file alias="flag">res/flag.png</file>
+        <file alias="tile-back">res/tile-back.png</file>
+        <file alias="tile-front">res/tile-front.png</file>
+        <file alias="mine">res/mine.png</file>
+        <file alias="flare">res/flare.png</file>
+        <file alias="sad">res/sad.png</file>
+        <file alias="smile">res/smile.png</file>
+        <file alias="smile-big">res/smile-big.png</file>
+        <file alias="icon">res/icon.png</file>
+        <file alias="splashscreen">res/splashscreen.png</file>
+        <file alias="background">res/background.png</file>
+    </qresource>
+    <qresource prefix="/qml">
+        <file alias="main.qml">qml/Minesweeper/main.qml</file>
+    </qresource>
+    <qresource prefix="/qml/Core">
+        <file alias="Explosion.qml">qml/Minesweeper/Core/Explosion.qml</file>
+        <file alias="Tile.qml">qml/Minesweeper/Core/Tile.qml</file>
+    </qresource>
+</RCC>

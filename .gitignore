@@ -1,0 +1,7 @@
+*.bar
+*.o
+*.swp
+moc_*.cpp
+qrc_*.cpp
+Makefile
+Minesweeper

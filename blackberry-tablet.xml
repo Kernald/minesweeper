@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<qnx xmlns="http://www.qnx.com/schemas/application/1.0">
+    <id>com.mpl.minesweeper</id>
+    <filename>Minesweeper</filename>
+    <name>Minesweeper</name>
+    <versionNumber>1.0.0</versionNumber>
+    <description>Minesweeper</description>
+    <copyright>2012</copyright>
+
+    <initialWindow>
+        <systemChrome>none</systemChrome>
+        <transparent>false</transparent>
+        <autoOrients>true</autoOrients>
+        <aspectRatio>landscape</aspectRatio>
+    </initialWindow>
+
+    <publisher>Marc Plano-Lesay</publisher>
+    <permission system="true">run_native</permission>
+    <category>core.games</category>
+    <icon><image>res/icon.png</image></icon>
+    <splashscreen>res/splashscreen.png</splashscreen>
+	<env var="LD_LIBRARY_PATH" value="app/native/lib"/>
+	<env var="QT_QPA_PLATFORM_PLUGIN_PATH" value="app/lib/platforms"/>
+	<env var="QT_QPA_FONTDIR" value="/usr/fonts/font_repository/liberation"/>
+</qnx>
