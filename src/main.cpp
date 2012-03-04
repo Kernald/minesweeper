@@ -10,7 +10,9 @@ int main(int argc, char *argv[]) {
 	QDeclarativeView viewer;
 	Core* game = new Core;
 	viewer.engine()->rootContext()->setContextObject(game);
+#ifdef __QNX__
 	viewer.engine()->importPlugin("app/native/lib/qml/libqmlparticlesplugin.so", "Qt.labs.particles", NULL);
+#endif // __QNX__
 	viewer.setSource(QUrl("qrc:/qml/main.qml"));
 	viewer.setWindowIcon(QPixmap(":/res/mine"));
 	viewer.show();
