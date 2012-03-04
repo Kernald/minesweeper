@@ -1,7 +1,11 @@
 *.bar
 *.o
+*.obj
+*.pro.user
 *.swp
 moc_*.cpp
 qrc_*.cpp
 Makefile
 Minesweeper
+minesweeper.exe
+minesweeper.intermediate.manifest
