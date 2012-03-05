@@ -14,6 +14,9 @@ int main(int argc, char *argv[]) {
 #ifdef __QNX__
 	viewer.engine()->importPlugin("app/native/lib/qml/libqmlparticlesplugin.so", "Qt.labs.particles", NULL);
 #endif // __QNX__
+#ifdef _MSC_VER
+    viewer.engine()->importPlugin(QDir().absolutePath() + "/qmlparticlesplugin.dll", "Qt.labs.particles", NULL);
+#endif // _MSC_VER
 	viewer.setSource(QUrl("qrc:/qml/main.qml"));
 	viewer.setWindowIcon(QPixmap(":/res/mine"));
 	viewer.show();
