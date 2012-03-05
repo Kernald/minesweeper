@@ -42,4 +42,6 @@ QMAKE_EXTRA_TARGETS += package
 OTHER_FILES += \
     qml/Minesweeper/main.qml \
     qml/Minesweeper/Core/Tile.qml \
-    qml/Minesweeper/Core/Explosion.qml
+    qml/Minesweeper/Core/Explosion.qml \
+    qml/Minesweeper/Core/Fireworks.qml \
+    qml/Minesweeper/fireworksCreation.js

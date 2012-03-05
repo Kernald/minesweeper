@@ -20,7 +20,7 @@ QDeclarativeListProperty<TileData> Core::tiles() {
     return QDeclarativeListProperty<TileData>(this, &_tiles, &tilesPropAppend, &tilesPropCount, &tilesPropAt, 0);
 }
 
-Core::Core() : _numCols(9), _numRows(9), _playing(true), _won(false) {
+Core::Core() : _numCols(9), _numRows(9), _playing(true), _won(true) {
     setObjectName("mainObject");
     qsrand(QTime(0, 0, 0).secsTo(QTime::currentTime()));
 
@@ -71,6 +71,7 @@ void Core::reset() {
     }
     _nMines = 12;
     _nFlags = 0;
+    _won = true;
     emit numMinesChanged();
     emit numFlagsChanged();
     setPlaying(false);
@@ -112,7 +113,7 @@ bool Core::flip(int row, int col) {
             for (int r = row - 1; r <= row + 1; ++r) {
                 TileData* nearT = tile(r, c);
                 if (nearT && !nearT->flipped() && !nearT->hasFlag())
-                    flip( r, c );
+                    flip(r, c);
             }
         return true;
     }
@@ -136,8 +137,10 @@ bool Core::flip(int row, int col) {
                 if (t && t->hasMine())
                     flip(r, c);
             }
-        _won = false;
-        hasWonChanged();
+        if (_won) {
+            _won = false;
+            hasWonChanged();
+        }
         setPlaying(false);
         return true;
     }

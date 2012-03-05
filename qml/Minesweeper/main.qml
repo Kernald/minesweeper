@@ -1,5 +1,6 @@
 import QtQuick 1.0
 import "Core"
+import "fireworksCreation.js" as FireworksManagment
 
 Item {
     id: field
@@ -11,13 +12,13 @@ Item {
         anchors.fill: parent
     }*/
     Image {
-		source: "qrc:/res/background"
-		anchors.fill: parent
-		fillMode: Image.Tile
-	}
+        source: "qrc:/res/background"
+        anchors.fill: parent
+        fillMode: Image.Tile
+    }
 
-	width: 1024
-	height: 600
+    width: 1024
+    height: 600
 
     Grid {
         anchors.horizontalCenter: parent.horizontalCenter
@@ -64,6 +65,10 @@ Item {
         }
     }
 
+    Item {
+        id: fireworks
+    }
+
     Image {
         anchors.bottom: field.bottom
         anchors.bottomMargin: 15
@@ -77,4 +82,9 @@ Item {
         }
     }
 
+    Connections {
+        target: core
+        onHasWonChanged: if (hasWon)
+                             FireworksManagment.createFireworks();
+    }
 }
