@@ -38,7 +38,7 @@ public:
     }
 
 public slots:
-    Q_INVOKABLE bool flip(int row, int col);
+    Q_INVOKABLE bool flip(int row, int col, bool end = false);
     Q_INVOKABLE bool flag(int row, int col);
     void setBoard();
     void reset();

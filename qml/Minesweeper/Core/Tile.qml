@@ -38,7 +38,8 @@ Flipable {
         Text {
             anchors.centerIn: parent
             text: modelData.hint
-            color: "white"; font.bold: true
+            color: modelData.hasFlag && !modelData.hasMine ? "red" : "white"
+            font.bold: true
             opacity: !modelData.hasMine && modelData.hint > 0
         }
 

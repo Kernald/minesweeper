@@ -89,12 +89,12 @@ int Core::getHint(int row, int col) {
     return hint;
 }
 
-bool Core::flip(int row, int col) {
+bool Core::flip(int row, int col, bool end) {
     if (!_playing)
         return false;
 
     TileData *t = tile(row, col);
-    if (!t || t->hasFlag())
+    if (!t || (t->hasFlag() && !end))
         return false;
 
     if (t->flipped()) {
@@ -136,6 +136,8 @@ bool Core::flip(int row, int col) {
                 TileData* t = tile(r, c);
                 if (t && t->hasMine())
                     flip(r, c);
+                if (t && t->hasFlag() && !t->hasMine())
+                    flip(r, c, true);
             }
         if (_won) {
             _won = false;
