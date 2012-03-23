@@ -3,6 +3,8 @@ CONFIG += release
 
 QT += declarative
 
+LIBS += -lbps
+
 SOURCES += src/main.cpp \
     src/tiledata.cpp \
     src/core.cpp
@@ -19,7 +21,7 @@ QMAKE_LFLAGS += '-Wl,-rpath,\'./app/native/lib\''
 package.target = $${TARGET}.bar
 package.depends = $$TARGET
 package.commands = blackberry-nativepackager \
-    -devMode -debugToken ~/dev/blackberry/debugtoken.bar \
+    -devMode -debugToken ~/.rim/debugtoken1.bar \
     -package $${TARGET}.bar -arg -platform -arg blackberry \
 	-arg -platformpluginpath -arg app/native/lib/platforms \
     blackberry-tablet.xml $$TARGET \

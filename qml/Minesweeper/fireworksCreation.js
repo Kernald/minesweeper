@@ -13,7 +13,7 @@ function finishFireworks() {
         for (var i = 0; i < 20; i++) {
             var fw = component.createObject(fireworks, {
                                                 "x": Math.floor((Math.random() * 2000)) % 1024,
-                                                "y": Math.floor((Math.random() * 2000)) % 600
+                                                "y": Math.floor((Math.random() * 2000)) % 1024
                                             });
             if (fw === null)
                 console.log("Error creating object");
