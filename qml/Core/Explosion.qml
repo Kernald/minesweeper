@@ -1,10 +1,10 @@
-import QtQuick 1.0
-import Qt.labs.particles 1.0
+import QtQuick 1.1
+//import Qt.labs.particles 1.0
 
 Item {
     property bool explode : false
 
-    Particles {
+    /*Particles {
         id: particles
         width: 40
         height: 40
@@ -24,5 +24,5 @@ Item {
         StateChangeScript {
             script: particles.burst(200)
         }
-    }
+    }*/
 }

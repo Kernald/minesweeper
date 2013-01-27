@@ -1,14 +1,14 @@
-import QtQuick 1.0
+import QtQuick 1.1
 
 Flipable {
     id: flipable
     property int angle: 0
+    width: 75
+    height: width
 
-    width: 40
-    height: 40
     transform: Rotation {
-        origin.x: 20
-        origin.y: 20
+        origin.x: flipable.width / 2
+        origin.y: flipable.height / 2
         axis.x: 1
         axis.z: 0
         angle: flipable.angle
@@ -16,8 +16,8 @@ Flipable {
 
     front: Image {
         source: "qrc:/res/tile-front"
-        width: 40
-        height: 40
+        width: parent.width
+        height: parent.height
 
         Image {
             anchors.centerIn: parent
@@ -32,8 +32,8 @@ Flipable {
 
     back: Image {
         source: "qrc:/res/tile-back"
-        width: 40
-        height: 40
+        width: parent.width
+        height: parent.height
 
         Text {
             anchors.centerIn: parent

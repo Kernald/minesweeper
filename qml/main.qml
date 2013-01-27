@@ -1,30 +1,23 @@
-import QtQuick 1.0
+import QtQuick 1.1
 import "Core"
-import "fireworksCreation.js" as FireworksManagment
+//import "fireworksCreation.js" as FireworksManagment
 
 Item {
     id: field
     property int clickx: 0
     property int clicky: 0
 
-    /*Rectangle {
-        color: "#777777"
-        anchors.fill: parent
-    }*/
     Image {
         source: "qrc:/res/background"
         anchors.fill: parent
-        fillMode: Image.Tile
+        fillMode: Image.Stretch
     }
-
-    width: 1024
-    height: 600
 
     Grid {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         columns: 9
-        spacing: 1
+        spacing: 10
 
         Repeater {
             id: repeater
@@ -35,14 +28,18 @@ Item {
 
     Row {
         id: gamedata
-        x: 20
-        spacing: 20
+        x: 25
+        spacing: 25
         anchors.bottom: field.bottom
         anchors.bottomMargin: 15
 
         Column {
-            spacing: 2
+            width: 50
+
+            spacing: 4
             Image {
+                width: 50
+                height: 50
                 source: "qrc:/res/mine"
             }
             Text {
@@ -53,8 +50,10 @@ Item {
         }
 
         Column {
-            spacing: 2
+            spacing: 4
             Image {
+                width: 50
+                height: 50
                 source: "qrc:/res/flag"
             }
             Text {
@@ -75,6 +74,8 @@ Item {
         anchors.right: field.right
         anchors.rightMargin: 20
         source: isPlaying ? 'qrc:res/smile' : hasWon ? 'qrc:/res/smile-big' : 'qrc:/res/sad'
+        width: 100
+        height: 100
 
         MouseArea {
             anchors.fill: parent
@@ -82,9 +83,9 @@ Item {
         }
     }
 
-    Connections {
+    /*Connections {
         target: core
         onHasWonChanged: if (hasWon)
                              FireworksManagment.createFireworks();
-    }
+    }*/
 }

@@ -12,15 +12,6 @@
         <file alias="splashscreen">res/splashscreen.png</file>
         <file alias="background">res/background.png</file>
     </qresource>
-    <qresource prefix="/qml">
-        <file alias="main.qml">qml/Minesweeper/main.qml</file>
-        <file alias="fireworksCreation.js">qml/Minesweeper/fireworksCreation.js</file>
-    </qresource>
-    <qresource prefix="/qml/Core">
-        <file alias="Explosion.qml">qml/Minesweeper/Core/Explosion.qml</file>
-        <file alias="Tile.qml">qml/Minesweeper/Core/Tile.qml</file>
-        <file alias="Fireworks.qml">qml/Minesweeper/Core/Fireworks.qml</file>
-    </qresource>
     <qresource prefix="/res/fireworks">
         <file alias="red">res/fireworks/red.png</file>
         <file alias="blue">res/fireworks/blue.png</file>

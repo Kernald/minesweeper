@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<qnx xmlns="http://www.qnx.com/schemas/application/1.0">
+    <id>com.mpl.minesweeper</id>
+    <name>Minesweeper</name>
+    <versionNumber>2.0.0</versionNumber>
+    <description>Minesweeper</description>
+    <initialWindow>
+        <systemChrome>none</systemChrome>
+        <transparent>false</transparent>
+        <autoOrients>true</autoOrients>
+        <aspectRatio>landscape</aspectRatio>
+    </initialWindow>
+    <env value="app/native/imports" var="QML_IMPORT_PATH"/>
+    <env value="app/native/plugins:/usr/lib/qt4/plugins" var="QT_PLUGIN_PATH"/>
+    <env value="app/native/lib:/usr/lib/qt4/lib/" var="LD_LIBRARY_PATH"/>
+    <action system="true">run_native</action>
+    <asset path="Minesweeper" type="Qnx/Elf" entry="true">Minesweeper</asset>
+    <asset path="%SRC_DIR%/qml">qml</asset>
+    <asset path="res/icon.png">icon.png</asset>
+    <icon>
+        <image>icon.png</image>
+    </icon>
+</qnx>

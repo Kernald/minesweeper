@@ -20,7 +20,7 @@ QDeclarativeListProperty<TileData> Core::tiles() {
     return QDeclarativeListProperty<TileData>(this, &_tiles, &tilesPropAppend, &tilesPropCount, &tilesPropAt, 0);
 }
 
-Core::Core() : _numCols(9), _numRows(9), _playing(true), _won(true) {
+Core::Core() : _numCols(9), _numRows(12), _playing(true), _won(true) {
     setObjectName("mainObject");
     qsrand(QTime(0, 0, 0).secsTo(QTime::currentTime()));
 
@@ -69,7 +69,7 @@ void Core::reset() {
         t->unflip();
         t->setHasFlag(false);
     }
-    _nMines = 12;
+    _nMines = 15;
     _nFlags = 0;
     _won = true;
     emit numMinesChanged();
@@ -173,7 +173,7 @@ bool Core::onBoard(unsigned int r, unsigned int c) const {
 }
 
 TileData* Core::tile(int row, int col) {
-    return onBoard(row, col) ? _tiles[col + _numRows * row] : NULL;
+    return onBoard(row, col) ? _tiles[col + _numCols * row] : NULL;
 }
 
 void Core::setPlaying(bool b) {
